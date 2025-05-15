@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('chatbot-send-button');
 
     // === URL Webhook n8n Anda - GANTI DENGAN LINK BARU INI ===
-    const n8nWebhookUrl = 'https://playground.naratel.net.id/webhook/chatcitra';
+    const n8nWebhookUrl = 'https://playground.naratel.net.id/webhook-test/chatcitra';
     console.log('Chatbot script loaded. Webhook URL:', n8nWebhookUrl);
 
     // Fungsi untuk menampilkan/menyembunyikan widget
