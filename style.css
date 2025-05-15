@@ -1,0 +1,370 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variabel Warna */
+:root {
+    --color-yellow: #FFDA00; /* Kuning */
+    --color-black: #1a1a1a; /* Hitam */
+    --color-white: #ffffff; /* Putih */
+    --color-light-gray: #f0f0f0; /* Abu-abu terang untuk latar alternatif */
+    --color-dark-gray: #333; /* Abu-abu gelap */
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-yellow);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-yellow);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--color-light-gray); /* Latar belakang abu-abu terang atau bisa gambar */
+    color: var(--color-black);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: darken(var(--color-yellow), 10%); /* Menjadi sedikit lebih gelap saat hover */
+}
+
+
+/* General Section Styling */
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.alternate-bg {
+    background-color: var(--color-light-gray);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-dark-gray);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    color: var(--color-black);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-item .price {
+    font-size: 1.3rem;
+    color: var(--color-yellow);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.service-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: var(--color-dark-gray);
+}
+
+.service-item li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--color-dark-gray);
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+
+/* --- Chatbot Widget Styling --- */
+#chatbot-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Pastikan widget di atas konten lain */
+}
+
+#chatbot-toggle {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border: none;
+    border-radius: 50px; /* Bentuk tombol bulat */
+    padding: 15px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#chatbot-toggle:hover {
+    background-color: darken(var(--color-yellow), 10%);
+    transform: scale(1.05);
+}
+
+#chatbot-container {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    bottom: calc(100% + 10px); /* Posisikan di atas tombol toggle */
+    right: 0;
+    width: 300px;
+    height: 400px;
+    background-color: var(--color-white);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Agar isi tidak meluber */
+}
+
+#chatbot-container.active {
+    display: flex; /* Tampilkan saat aktif */
+}
+
+.chatbot-header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header .close-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chatbot-messages {
+    flex-grow: 1; /* Mengisi ruang yang tersedia */
+    padding: 15px;
+    overflow-y: auto; /* Buat bisa discroll */
+    background-color: var(--color-light-gray); /* Latar pesan */
+}
+
+.chatbot-messages > div {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%; /* Batasi lebar pesan */
+    word-wrap: break-word; /* Pastikan kata tidak terpotong */
+}
+
+.user-message {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    align-self: flex-end; /* Posisikan di kanan */
+    margin-left: auto; /* Dorong ke kanan */
+}
+
+.bot-message {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    align-self: flex-start; /* Posisikan di kiri */
+    margin-right: auto; /* Dorong ke kiri */
+    border: 1px solid #ddd; /* Border tipis untuk pesan bot */
+}
+
+.chatbot-input-area {
+    display: flex;
+    padding: 10px;
+    background-color: var(--color-white);
+    border-top: 1px solid #ccc;
+}
+
+#chatbot-input {
+    flex-grow: 1; /* Input field mengisi ruang yang tersedia */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+#chatbot-send-button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#chatbot-send-button:hover {
+    background-color: var(--color-dark-gray);
+}
+
+/* Helper function for darken - basic CSS doesn't have this */
+/* In a real project, use SASS/LESS or manually calculate */
+/* For this example, we just make a guess or use a slightly darker defined color */
+/* Let's use a darker black for hover */
+#chatbot-toggle:hover { background-color: #E5C800; } /* Slightly darker yellow */
+#chatbot-send-button:hover { background-color: #444; } /* Slightly lighter black/dark gray */
+
+
+/* Responsiveness (Basic) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack items on small screens */
+    }
+
+    #chatbot-container {
+         width: 90%; /* Lebarkan widget di mobile */
+         height: 70vh; /* Tinggi relatif terhadap viewport */
+         bottom: 80px; /* Posisikan lebih tinggi agar tidak terhalang keyboard */
+         right: 5%;
+         left: 5%; /* Pusatkan di layar */
+    }
+    #chatbot-toggle {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+     header .container {
+         flex-direction: column;
+         text-align: center;
+     }
+     .logo { margin-bottom: 10px; }
+     nav ul li { margin: 0 5px; }
+     .hero { padding: 4rem 0; }
+     .hero h1 { font-size: 2rem; }
+     .section { padding: 2rem 0; }
+     .section h2 { font-size: 2rem; }
+     #chatbot-widget {
+         bottom: 10px;
+         right: 10px;
+     }
+     #chatbot-container {
+          width: 95%;
+          bottom: 60px;
+          right: 2.5%;
+          left: 2.5%;
+     }
+}
